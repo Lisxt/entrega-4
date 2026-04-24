@@ -11,7 +11,7 @@ export type Noticia = {
 };
 
 // --- CONFIGURAÇÃO DA URL DA API ---
-const API_URL = 'http://192.168.-.-:3000/noticias'; 
+const API_URL = 'http://---.---.-.-:3000/noticias'; 
 
 // ==========================================
 // COMPONENTES REUTILIZÁVEIS
