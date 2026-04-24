@@ -1,5 +1,5 @@
 # Projeto Notícias - React Native com Expo
-Aplicativo mobile desenvolvido com **React Native + Expo + TypeScript**, simulando um portal de notícias com navegação entre telas e gerenciamento local de notícias.
+Este projeto é uma aplicação de notícias composta por um Backend (API) robusto em Node.js e um Frontend (Mobile) em React Native. O ecossistema centraliza toda a lógica de negócios e persistência de dados no servidor, acessível via rede local.
 ---
 ## Sobre o projeto
 O aplicativo permite que usuários interajam com notícias através de diferentes perfis:
@@ -14,26 +14,49 @@ Demonstrar:
 - Uso de banco local com SQLite  
 - Organização de um app mobile com Expo  
 ---
-## Tecnologias utilizadas
-- React Native  
-- Expo  
-- TypeScript  
-- React Navigation  
-- Expo SQLite  
+## 🛠️ Tecnologias
+-Mobile: React Native (Expo), Axios (Consumo de API).
+-Backend (API): Node.js, Express, Drizzle ORM, SQLite.
+-Linguagem: TypeScript (Tipagem estrita em todo o ecossistema).
 ---
 ## Estrutura do projeto
 
-my-app
-├── App.tsx
-├── index.ts
-├── package.json
-├── app.json
-├── tsconfig.json
-└── src
-├── database.ts
-└── screens.tsx
+entrega-4
+├── backend-api
+│   ├── database.db
+│   ├── package-lock.json
+│   ├── package.json
+│   ├── server.ts
+│   └── tsconfig.json
+├── my-app
+│   ├── src/
+│   ├── app.json
+│   ├── App.tsx
+│   ├── index.ts
+│   ├── package-lock.json
+│   ├── package.json
+│   └── tsconfig.json
+├── .gitignore
+└── README.md
 
 ---
+## ⚙️ Configurações Importantes (Rede Local)
+
+Para que o aplicativo no celular consiga se comunicar com a API no computador sem o uso de ferramentas de túnel (como ngrok), siga os passos abaixo:
+
+### 1. Perfil da Rede no Windows
+O Windows bloqueia conexões externas se a rede estiver em modo "Público".
+1. Vá em *Configurações > Rede e Internet > Wi-Fi*.
+2. Clique na rede conectada e altere o *Tipo de perfil de rede* para *Privado*.
+
+### 2. Regra de Entrada no Firewall
+É necessário liberar a porta 3000 para receber conexões do celular:
+1. Abra o *Firewall do Windows com Segurança Avançada*.
+2. Vá em *Regras de Entrada* > *Nova Regra*.
+3. Selecione *Porta* > *TCP* > Portas locais específicas: *3000*.
+4. Selecione *Permitir a conexão* e dê o nome de API-Noticias.
+---
+
 ## Como executar o projeto
 ### Pré-requisitos
 - Node.js  
